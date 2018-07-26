@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+    <!-- Calculator container -->
+    <div class="calculator">
+        <div id="numberClicked"></div>
+        <!-- Output field -->
+        <div class="inputField">
+            <input type="text" id="inputField" autocomplete="off" autofocus>
+            <div class="outputField" id="outputField"></div>
+        </div>
+        <!-- Buttons -->
+        <div class="buttons">
+            <!-- Top bar -->
+            <div class="topBar">
+                    <button onclick="calc(this)" id="AC" title="Clear All">AC</button>
+                    <button onclick="calc(this)" title="Multiply">*</button>
+                    <button onclick="calc(this)" title="Divide">/</button>
+                    <button onclick="pi(this)" title="PI number">π</button>
+                    <button onclick="calc(this)" title="Clear">C</button>
+            </div>
+            <!-- Central section - numbers -->
+            <div class="numbers">
+                    <div class="rowThree">
+                        <button onclick="calc(this)">7</button>
+                        <button onclick="calc(this)">8</button>
+                        <button onclick="calc(this)">9</button>
+                    </div>
+                    <div class="rowTwo">
+                        <button onclick="calc(this)">4</button>
+                        <button onclick="calc(this)">5</button>
+                        <button onclick="calc(this)">6</button>
+                    </div>                    
+                    <div class="rowOne">
+                        <button onclick="calc(this)">1</button>
+                        <button onclick="calc(this)">2</button>
+                        <button onclick="calc(this)">3</button>
+                    </div>
+                    <div class="rowZero">
+                            <button onclick="calc(this)">0</button>
+                            <button onclick="calc(this)">.</button>
+                            <button onclick="calc(this)" id="equal" title="Equal">=</button>
+                    </div>
+            </div>
+            <!-- Sidebar - one -->
+            <div class="sideBarOne">
+                    <button onclick="calc(this)" id="plus" title="Addition">+</button>
+                    <button onclick="calc(this)" title="Subtraction">-</button>
+            </div>
+            <!-- Sidebar - two -->
+            <div class="anotherBar">
+               <button onclick="calc(this)" title="Reminder of..">%</button>
+               <button onclick="calc(this)">(</button>
+               <button onclick="calc(this)">)</button>
+               <button onclick="squareRoot(this)" title="Square root of..">√</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script link -->
+    <script src="main.js"></script>
+</body>
+</html>

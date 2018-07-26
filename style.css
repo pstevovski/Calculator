@@ -1,0 +1,237 @@
+/* Global */
+body{
+    background-color: #34495e;
+    overflow-x: hidden;
+}
+button{
+    outline: none !important;
+}
+/* Global end */
+
+/* Calculator - main */
+.calculator{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width:325px;
+    height: 385px;
+    border-right: 1px solid #333;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 10px 10px rgba(0,0,0,0.20);
+    border-radius: 3px;
+    border-bottom-right-radius: 3px;
+    z-index: 9;
+
+    transition: 0.2s ease;
+}
+/* Input field container */
+.inputField{
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+/* Input field input */
+.inputField input{
+    width: 100%;
+    height: 55px;
+    outline: none !important;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    vertical-align: bottom;
+    background-color: #fff;
+    font-size: 22px;
+    font-family: "Montserrat Medium";
+    color: #333;
+    border-bottom: 1px solid #33333350;
+}
+/* Output field - top box */
+.outputField{
+    position: absolute;
+    top: -10px;
+    width:97%;
+    height: 39px;
+    background-color: #eee;
+    color: #33333350;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-right: 10px;
+    font-size: 14px;
+    font-family: "Montserrat SemiBold";
+    border:none;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+/* Calculator - buttons section */
+.calculator .buttons{
+    z-index: 9;
+    width: 100%;
+    height: 335px;
+    display: grid;
+    grid-template-columns: repeat(6,60px);
+    grid-template-rows: repeat(5,1fr);
+    grid-gap: 2px;
+    padding: 5px;
+}
+.calculator .buttons button{
+    width: 60px;
+    height: 60px;
+    border:none;
+    text-align: center;
+    background-color: #fff;
+    color: #33333385;
+    border: 2px solid rgba(0,0,0,0.10);
+    vertical-align: center;
+    font-size: 18px;
+    font-family: "Montserrat SemiBold";
+    transition: all 0.25s;
+    cursor: pointer;
+}
+.buttons button:hover{
+    background-color: #00B0FF;
+    color: #fff;
+    box-shadow: 3px 3px rgba(0,0,0,0.10);
+}
+/* Calculator - top bar */
+.calculator .buttons .topBar{
+    grid-row: 1/1;
+    grid-column: 1/7;
+}
+/* Calculator - buttons section - numbers */
+.calculator .buttons .numbers{
+    grid-row: 2;
+    grid-column: 1/6;
+}
+.numbers > *{
+    margin: 2px 0;
+}
+/* Calculator - buttons section - side bar */
+.calculator .buttons .sideBarOne{
+    grid-row: 2/4;
+    grid-column: 4/5;
+    margin-left: 7px;
+}
+.sideBarOne > * {
+    margin: 2px 0;
+}
+.calculator .buttons .anotherBar{
+    grid-row: 2;
+    grid-column: 5/6;
+    margin-left: 8px;
+}
+.anotherBar > * {
+    margin: 1px 0;
+}
+/* All clear button */
+#AC{
+    background-color:#E53935;
+    color: #fff;
+}
+/* Plus button */
+#plus{
+    height: 120px;
+}
+/* Equal button */
+#equal{
+    width: 125px;
+    color: #fff;
+    background-color: #00B0FF;
+}
+/* Number clicked / key pressed showcase above caluclator */
+#numberClicked{
+    width: 120px;
+    height: 120px;
+    font-family: "Montserrat Black";
+    font-size: 75px;
+    color: rgba(255,255,255,0.35);
+    position: absolute;
+    top: -70px;
+    left:50%;
+    transform: translateX(-50%) scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+}
+#numberClicked.active{
+    animation: clicked 0.2s ease forwards;
+}
+@keyframes clicked {
+    0%{
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+/* Media Querries */
+@media (max-width: 355px){
+    .calculator{
+        width: 300px;
+        height: 360px;
+    }
+    .calculator .buttons button{
+        width: 55px;
+        height: 55px;
+    }
+    .outputField{
+        width: 96.85%;
+        border-right: 1px solid #333;
+    }
+    #plus{
+        height: 110px;
+    }
+    #equal{
+        width: 115px;
+    }
+    .calculator .buttons .sideBarOne{
+        grid-row: 2/4;
+        grid-column: 4/5;
+        margin-left: -9px;
+    }
+    .calculator .buttons .anotherBar{
+        grid-row: 2;
+        grid-column: 5/6;
+        margin-left: -11px;
+    }
+}
+@media (max-width: 320px){
+    .calculator{
+        width: 265px;
+        height: 325px;
+    }
+    .calculator .buttons button{
+        width: 48px;
+        height: 48px;
+    }
+    .outputField{
+        width: 96.25%;
+        border-right: 1px solid #333;
+    }
+    #plus{
+        height: 97px;
+    }
+    #equal{
+        width: 101px;
+    }
+    .calculator .buttons .sideBarOne{
+        grid-row: 2/4;
+        grid-column: 4/5;
+        margin-left: -29px;
+    }
+    .calculator .buttons .anotherBar{
+        grid-row: 2;
+        grid-column: 5/6;
+        margin-left: -39px;
+    }
+}
